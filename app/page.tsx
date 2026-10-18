@@ -18,6 +18,9 @@ export default function Home() {
   const [step, setStep] = useState(-1);
   const [pattern, setPattern] = useState(initialPattern);
   const [genre, setGenre] = useState("Hip-Hop");
+  const [mood, setMood] = useState("Motivated");
+const [songTopic, setSongTopic] = useState("");
+const [lyrics, setLyrics] = useState("");
   const audioRef = useRef<AudioContext | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const stepRef = useRef(0);
