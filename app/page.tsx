@@ -179,6 +179,8 @@ const [lyrics, setLyrics] = useState("");
     );
   }
 
+
+  function reset() {
     stop();
     setPattern(initialPattern);
   }
