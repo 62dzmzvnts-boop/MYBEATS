@@ -185,7 +185,7 @@ const [lyrics, setLyrics] = useState("");
     );
   }
 
-  }
+  
 
   return (
     <main className="min-h-screen bg-[#090b10] text-white px-4 py-8">
