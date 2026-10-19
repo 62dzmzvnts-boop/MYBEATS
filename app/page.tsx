@@ -126,6 +126,59 @@ const [lyrics, setLyrics] = useState("");
   }
 
   function reset() {
+  function generateLyrics() {
+    const topic = songTopic.trim() || "finding my way";
+    const lyricIdeas: Record<string, string[]> = {
+      Motivated: [
+        "I turned my hardest days into a reason to rise",
+        "Now every little setback is a step toward the sky",
+        "I kept my own promise when the road got tough",
+        "I found out who I am when the world got rough",
+      ],
+      Sad: [
+        "The rain taps softly on my window tonight",
+        "I'm searching through the shadows for a little light",
+        "Some memories stay long after people go",
+        "I'm learning how to heal at a pace of my own",
+      ],
+      Happy: [
+        "The sun is shining and the whole world feels new",
+        "I've got a little rhythm and a good friend or two",
+        "Let the music carry every worry away",
+        "I'm living in the moment and I'm loving today",
+      ],
+      Angry: [
+        "I've carried all these words for far too long",
+        "Now I'm turning all that pressure into song",
+        "You won't decide the limits of my flame",
+        "I'll write my future and I'll own my name",
+      ],
+      Heartbroken: [
+        "Your side of the bed still feels like home",
+        "I hear your echo when I'm on my own",
+        "I'm picking up the pieces one by one",
+        "A different chapter has only just begun",
+      ],
+      Relaxed: [
+        "Let the slow beat carry all the noise away",
+        "There's no need to rush, there's no race today",
+        "Breathe in the moment, let the whole world fade",
+        "I'll follow the rhythm and the peace it made",
+      ],
+    };
+
+    const lines = lyricIdeas[mood] || lyricIdeas.Motivated;
+
+    setLyrics(
+      `MYBEATS — ${mood} ${genre}\n` +
+      `Topic: ${topic} | ${bpm} BPM\n\n` +
+      `VERSE\n${lines.join("\n")}\n\n` +
+      `CHORUS\n${topic} — this is my story tonight\n` +
+      `${lines[0]}\n${lines[3]}\n\n` +
+      `Made with MYBEATS`
+    );
+  }
+
     stop();
     setPattern(initialPattern);
   }
