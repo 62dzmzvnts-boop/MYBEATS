@@ -125,9 +125,15 @@ const [lyrics, setLyrics] = useState("");
     }));
   }
 
+  
   function reset() {
+    stop();
+    setPattern(initialPattern);
+  }
+
   function generateLyrics() {
     const topic = songTopic.trim() || "finding my way";
+
     const lyricIdeas: Record<string, string[]> = {
       Motivated: [
         "I turned my hardest days into a reason to rise",
@@ -179,10 +185,6 @@ const [lyrics, setLyrics] = useState("");
     );
   }
 
-
-  function reset() {
-    stop();
-    setPattern(initialPattern);
   }
 
   return (
